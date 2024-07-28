@@ -1,0 +1,157 @@
+name: seg-mig
+
+topology:
+  defaults:
+    kind: ceos
+    image: ceos:4.31.2F
+  nodes:
+    lab-cs01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.10
+    lab-ds01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.11
+    lab-as01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.21
+    lab-as02:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.22
+    lab-as03:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.23
+
+  links:
+    - endpoints: ["lab-cs01:eth1", "lab-ds01:eth1"]
+    - endpoints: ["lab-cs01:eth2", "lab-ds01:eth2"]
+    - endpoints: ["lab-cs01:eth3", "lab-ds01:eth3"]
+    - endpoints: ["lab-cs01:eth4", "lab-ds01:eth4"]
+    - endpoints: ["lab-ds01:eth12", "lab-as01:eth1"]
+    - endpoints: ["lab-ds01:eth11", "lab-as01:eth2"]
+    - endpoints: ["lab-ds01:eth10", "lab-as02:eth1"]
+    - endpoints: ["lab-ds01:eth9", "lab-as02:eth2"]
+    - endpoints: ["lab-ds01:eth8", "lab-as03:eth1"]
+    - endpoints: ["lab-ds01:eth7", "lab-as03:eth2"]
+
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth3
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth4
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth5
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth6
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth7
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth8
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth9
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth10
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth11
+    - type: dummy
+      endpoint:
+        node: lab-as01
+        interface: eth12
+
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth3
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth4
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth5
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth6
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth7
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth8
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth9
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth10
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth11
+    - type: dummy
+      endpoint:
+        node: lab-as02
+        interface: eth12
+
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth3
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth4
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth5
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth6
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth7
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth8
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth9
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth10
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth11
+    - type: dummy
+      endpoint:
+        node: lab-as03
+        interface: eth12
