@@ -9,19 +9,28 @@ topology:
       kind: linux
       image: ubuntu:latest
       cmd: sleep infinity
-      # && apt update && apt install -y iproute2 iputils-ping
+      exec:
+        - echo "Installing networking utilities on Desktop1"
+        - apt update
+        - apt install -y iproute2 iputils-ping
       # apt install openssh-server && systemctl start ssh
     desktop2:
       kind: linux
       image: ubuntu:latest
       cmd: sleep infinity
-      # && apt update && apt install -y iproute2 iputils-ping
+      exec:
+        - echo "Installing networking utilities on Desktop2"
+        - apt update
+        - apt install -y iproute2 iputils-ping
       # apt install openssh-server && systemctl start ssh
     desktop3:
       kind: linux
       image: ubuntu:latest
       cmd: sleep infinity
-      # && apt update && apt install -y iproute2 iputils-ping
+      exec:
+        - echo "Installing networking utilities on Desktop3"
+        - apt update
+        - apt install -y iproute2 iputils-ping
       # apt install openssh-server && systemctl start ssh
 
     na-us-0000-test-fwl01:
