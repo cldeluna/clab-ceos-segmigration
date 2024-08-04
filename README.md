@@ -317,7 +317,7 @@ The commands below will help you configure the IP address on the desktop.
 ```bash
 # if you are logged in as root you do not need to start each command with sudo
 
-ip addr add 192.169.100.33/24 dev eth1 #you should confirm the interface with `ip add` command
+ip addr add 192.168.100.33/24 dev eth1 #you should confirm the interface with `ip add` command
 
 ip link set dev eth1 up   # make sure the interface is "up"
 
