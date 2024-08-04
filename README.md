@@ -334,8 +334,29 @@ sudo apt update
 sudo apt install -y net-tools iproute2
 ```
 
+Default Gateway
+```bash
+ip route change default via 192.168.100.1 dev eth1
+```
 
+```bash
+claudia@ubuntu:~/containerlabs/test/clab-ceos-segmigration$ docker exec -it clab-cds-seg-fwl-desktop1 bash
+root@desktop1:/# history
+    1  apt update
+    2  apt install -y iproute2 iputils-ping
+    3  ip addr add 192.168.100.33/24 dev eth1
+    4  ping 192.168.100.1
+    5  ping 192.168.0.1
+    6  exit
+    7  history
+    8  ping 192.168.100.1
+    9  exit
+   10  ip route change default via 192.168.100.1 dev eth1
+   11  ping 192.168.0.1
+   12  exit
+   13  history
 
+```
 
 
 # **Exercise 2 - Link Aggregation**
