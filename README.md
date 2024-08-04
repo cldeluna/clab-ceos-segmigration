@@ -289,3 +289,137 @@ INFO[0000] Parsing & checking topology file: cds-seg.clab.yml
 +---+-----------------------------------+--------------+---------------+-------+---------+-----------------+----------------------+
 claudia@ubuntu:~/containerlabs/clab-ceos-segmigration$
 ```
+
+
+
+
+
+# **Exercise 1 - Gateway and L2 down to Users Desktop**
+
+Now that most everyone has their Containerlab topology up and running, lets work on an exercise.
+
+Intranet Data Vlan
+
+​	1.	Create a new Vlan 100 for subnet [192.168.100.0/24](https://192.168.100.0/24) with the gateway on the core
+
+​	2.	Establish layer 2 down through the distribution switch down to as01 on a single link and keeping ds01 at layer 2.
+
+​	3.	Configure as01 Eth3 as an access port on vlan 100.
+
+​	4.	Configure IP [192.168.100.33/24](https://192.168.100.33/24) on the user desktop.
+
+​	5.	Ping the gateway from the desktop and share a screen cap in this thread.
+
+Tip:
+
+The commands below will help you configure the IP address on the desktop.
+
+```bash
+# if you are logged in as root you do not need to start each command with sudo
+
+ip addr add 192.169.100.33/24 dev eth1 #you should confirm the interface with `ip add` command
+
+ip link set dev eth1 up   # make sure the interface is "up"
+
+ip add # verify your IP address 
+```
+
+You may need to install some packages if the ip add command does not work (is not found)
+
+```bash
+# if you are logged in as root you do not need to start each command with sudo
+
+sudo apt update
+
+sudo apt install -y net-tools iproute2
+```
+
+
+
+
+
+# **Exercise 2 - Link Aggregation**
+
+**Goal**
+
+Put all links into port channels first without LACP and then for the final configuration using LACP.
+
+​	1.	Place the 4 links between cs an ds into a port channel numbered 10. Arista and other vendors call this LAG (Link Aggregation Groups) but its pretty common to just say port-channel.
+
+​	2.	Place the two links between ds and as01 into a port channel numbered 100
+
+​	3.	Place the two links between ds and as02 into a port channel numbered 200
+
+​	4.	Place the two links between ds and as03 into a port channel numbered 300
+
+https://arista.my.site.com/AristaCommunity/s/article/how-to-configure-link-aggregation-groups-in-eos
+
+**Tip:**
+
+when using LACP, the upstream switch should be the active member.
+
+**Results**
+
+provide the show port-channel output for each port channel configured from each device participating in the port channel. The first set without LACP and the second set with the port channels configured with LACP.
+
+**Extra credit**
+
+Pick a port channel
+
+using LACP, configure both ends in passive mode - what happens?
+
+using LACP, configure both ends in active mode - what happens?
+
+**Tip:** 
+
+what should you do with any existing configuration on an interface?? (that is what should you do with the switch interface configurations from Exercise 1?).
+
+**Extra Extra credit.** 
+
+Fix your port channel configurations so that you can still ping your desktop from the core and the gateway on the core from the desktop. (think port channel rather than interface)
+
+# **Exercise 3 - Routing**
+
+
+
+**Goal**
+Configure dynamic routing using OSPF routing between core and distro, Move the 192.168.100.0/24 SVI from core to distro and make sure that the core has a layer 3 or routed path to the desktop.
+
+1. Configure port channel 10 interface as a Layer 3 link (means that rather than having a switchport trunk interface with vlans you will have a routed point to point link on a specific subnet).  Use subnet 192.168.10.0/29.  Use the first available IP for the core and the last valid available IP for the ds.
+
+From the core, ping the 102.168.10 ds Po10 interface IP (save screen shot)
+From the distro, ping the 102.168.10 cs Po10 interface IP (save screen shot)
+
+4. Configure loopback0 interfaces:
+cs 192.168.0.1/32
+ds 192.168.0.2/32
+
+5. Configure OSPF area 10 and advertise the loopbacks.
+https://arista.my.site.com/AristaCommunity/s/article/a-simple-ospf-configuration
+
+**Extra credit:** Don't advertise everything.  Be deterministic about every route you are advertising.  
+
+6. Move the vlan 100 SVI from the core to the distribution and route the subnet.  The cs should have a routing table which includes subnet 192.168.100.0/24 learned from the distro.
+
+**Tip:**  Make sure routing is enabled on your core and distro
+
+---
+
+please share the following answers and results
+
+**Questions:**
+
+Why are loopbacks a best practice?
+
+What special property do loopback interfaces have?
+
+Why is it a best practice to be specific about which routes to advertise into your routing protocol?
+
+**Results:**
+Po10 interface ping screen shots form step 1
+Share the routing table on both core and distro.
+From the Core, try to ping the desktop 192.168.100.33. share screen shot
+From the desktop, try to ping the vlan 100 gateway, the cs loopback and the ds loopback and share screen shots
+From the core, trace to the desktop and share screen shot
+
+Some of the above will fail.   Why might that be?
