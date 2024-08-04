@@ -8,17 +8,17 @@ topology:
     desktop1:
       kind: linux
       image: ubuntu:latest
-      cmd: apt update && apt install -y iproute2 iputils-ping && sleep infinity
+      cmd: sleep infinity && apt update && apt install -y iproute2 iputils-ping
       # apt install openssh-server && systemctl start ssh
     desktop2:
       kind: linux
       image: ubuntu:latest
-      cmd: apt update && apt install -y iproute2 iputils-ping && sleep infinity
+      cmd: sleep infinity && apt update && apt install -y iproute2 iputils-ping
       # apt install openssh-server && systemctl start ssh
     desktop3:
       kind: linux
       image: ubuntu:latest
-      cmd: apt update && apt install -y iproute2 iputils-ping && sleep infinity
+      cmd: sleep infinity && apt update && apt install -y iproute2 iputils-ping
       # apt install openssh-server && systemctl start ssh
 
     na-us-0000-test-fwl01:
