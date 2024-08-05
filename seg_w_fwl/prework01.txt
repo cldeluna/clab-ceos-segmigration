@@ -1,0 +1,74 @@
+
+! flw01
+vlan 400
+   name INSIDE_FSZS_400
+
+interface Vlan400
+   description FSZS_400_PinPoint
+   ip address 192.168.40.1/24
+
+
+! For the first one
+interface Et2
+  switchport trunk allowed vlan 400
+! for any additional
+interface Et2
+  switchport trunk allowed vlan add 401
+
+
+! cs01
+vlan 400
+   name INSIDE_FSZS_400
+
+ip route 192.168.40.0/24 192.168.6.6 
+
+! leave off to verify L2 connectivity
+!router ospf 10
+!  redistribute static
+
+interface po10
+  switchport trunk allowed vlan add 400
+
+
+!ds01
+vlan 400
+   name INSIDE_FSZS_400
+
+interface po10
+  switchport trunk allowed vlan add 400
+
+interface po100
+  switchport trunk allowed vlan add 400
+
+
+!as01
+
+vlan 400
+   name INSIDE_FSZS_400
+
+interface po100
+  switchport trunk allowed vlan add 400
+
+!Testing
+
+na-us-0000-test-as01#config t
+na-us-0000-test-as01(config)#int vlan400
+na-us-0000-test-as01(config-if-Vl400)#ip add 192.168.40.5/24
+na-us-0000-test-as01(config-if-Vl400)#no shut
+na-us-0000-test-as01(config-if-Vl400)#end
+na-us-0000-test-as01#
+na-us-0000-test-as01#ping 192.168.40.1  
+
+
+
+! Desktop1
+
+root@desktop1:/# history
+    1  ip add
+    2  ip addr add 192.168.40.33/24 dev eth1
+    3  ping 192.168.40.5
+    4  ip link set dev eth1 down
+    5  ip link set dev eth1 up
+    6  ping 192.168.40.5
+    7  ping 192.168.40.1
+
