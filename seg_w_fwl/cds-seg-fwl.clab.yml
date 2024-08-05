@@ -186,10 +186,6 @@ topology:
     - type: dummy
       endpoint:
         node: na-us-0000-test-as03
-        interface: eth4
-    - type: dummy
-      endpoint:
-        node: na-us-0000-test-as03
         interface: eth5
     - type: dummy
       endpoint:
