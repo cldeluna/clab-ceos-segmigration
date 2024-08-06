@@ -35,28 +35,6 @@ topology:
         - apt install -y iproute2 iputils-ping
         - ip addr add 192.168.102.33/24 dev eth1
       # apt install openssh-server && systemctl start ssh
-    desktop4:
-      kind: linux
-      image: ubuntu:latest
-      cmd: sleep infinity
-      exec:
-        - echo "Installing networking utilities on Desktop4"
-        - apt update
-        - apt install -y iproute2 iputils-ping
-        - ip addr add 192.168.102.34/24 dev eth1
-        - ping 192.168.102.1
-      # apt install openssh-server && systemctl start ssh
-    desktop5:
-      kind: linux
-      image: ubuntu:latest
-      cmd: sleep infinity
-      exec:
-        - echo "Installing networking utilities on Desktop5"
-        - apt update
-        - apt install -y iproute2 iputils-ping
-        - ip addr add 192.168.102.35/24 dev eth1
-        - ping 192.168.102.1
-      # apt install openssh-server && systemctl start ssh
 
     na-us-0000-test-fwl01:
       kind: ceos
@@ -82,10 +60,6 @@ topology:
       kind: ceos
       mgmt-ipv4: 172.20.20.33
       startup-config: ./na-us-0000-test-as03.cfg
-    na-us-0000-test-as04:
-      kind: ceos
-      mgmt-ipv4: 172.20.20.34
-      startup-config: ./na-us-0000-test-as04.cfg
 
   links:
     - endpoints: ["na-us-0000-test-cs01:eth1", "na-us-0000-test-ds01:eth1"]
@@ -100,12 +74,9 @@ topology:
     - endpoints: ["na-us-0000-test-ds01:eth8", "na-us-0000-test-as02:eth2"]
     - endpoints: ["na-us-0000-test-ds01:eth9", "na-us-0000-test-as03:eth1"]
     - endpoints: ["na-us-0000-test-ds01:eth10", "na-us-0000-test-as03:eth2"]
-    - endpoints: ["na-us-0000-test-as03:eth4", "na-us-0000-test-as04:eth1"]
     - endpoints: ["desktop1:eth1", "na-us-0000-test-as01:eth3"]
     - endpoints: ["desktop2:eth1", "na-us-0000-test-as02:eth3"]
     - endpoints: ["desktop3:eth1", "na-us-0000-test-as03:eth3"]
-    - endpoints: ["desktop4:eth1", "na-us-0000-test-as04:eth2"]
-    - endpoints: ["desktop5:eth1", "na-us-0000-test-as04:eth3"]
 
 
 
@@ -183,6 +154,10 @@ topology:
         node: na-us-0000-test-as02
         interface: eth12
 
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth4
     - type: dummy
       endpoint:
         node: na-us-0000-test-as03
