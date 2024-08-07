@@ -1,0 +1,221 @@
+name: cds-seg-fwl-br
+
+topology:
+
+  kinds:
+    bridge:
+      type: bridge
+
+  defaults:
+    kind: ceos
+    image: ceos:4.32.1F
+
+  nodes:
+    br-dumbhub:
+      kind: bridge
+    desktop1:
+      kind: linux
+      image: ubuntu:latest
+      cmd: sleep infinity
+      exec:
+        - echo "Installing networking utilities on Desktop1"
+        - apt update
+        - apt install -y iproute2 iputils-ping
+        - ip addr add 192.168.100.33/24 dev eth1
+      # apt install openssh-server && systemctl start ssh
+    desktop2:
+      kind: linux
+      image: ubuntu:latest
+      cmd: sleep infinity
+      exec:
+        - echo "Installing networking utilities on Desktop2"
+        - apt update
+        - apt install -y iproute2 iputils-ping
+        - ip addr add 192.168.101.33/24 dev eth1
+      # apt install openssh-server && systemctl start ssh
+    desktop3:
+      kind: linux
+      image: ubuntu:latest
+      cmd: sleep infinity
+      exec:
+        - echo "Installing networking utilities on Desktop3"
+        - apt update
+        - apt install -y iproute2 iputils-ping
+        - ip addr add 192.168.102.33/24 dev eth1
+      # apt install openssh-server && systemctl start ssh
+    desktop4:
+      kind: linux
+      image: alpine:latest
+      cmd: sleep infinity
+      exec:
+        - echo "Installing networking utilities on Desktop4"
+          #- apt update
+          #- apt install -y iproute2 iputils-ping
+        - ip addr add 192.168.102.34/24 dev eth1
+          #- ping 192.168.102.1
+      # apt install openssh-server && systemctl start ssh
+    desktop5:
+      kind: linux
+      image: alpine:latest
+      cmd: sleep infinity
+      exec:
+        - echo "Installing networking utilities on Desktop5"
+          #- apt update
+          #- apt install -y iproute2 iputils-ping
+        - ip addr add 192.168.102.35/24 dev eth1
+          #- ping 192.168.102.1
+      # apt install openssh-server && systemctl start ssh
+
+    na-us-0000-test-fwl01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.66
+      startup-config: ./na-us-0000-test-fwl01.cfg
+    na-us-0000-test-cs01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.10
+      startup-config: ./na-us-0000-test-cs01.cfg
+    na-us-0000-test-ds01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.20
+      startup-config: ./na-us-0000-test-ds01.cfg
+    na-us-0000-test-as01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.31
+      startup-config: ./na-us-0000-test-as01.cfg
+    na-us-0000-test-as02:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.32
+      startup-config: ./na-us-0000-test-as02.cfg
+    na-us-0000-test-as03:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.33
+      startup-config: ./na-us-0000-test-as03.cfg
+
+  links:
+    - endpoints: ["na-us-0000-test-cs01:eth1", "na-us-0000-test-ds01:eth1"]
+    - endpoints: ["na-us-0000-test-cs01:eth2", "na-us-0000-test-ds01:eth2"]
+    - endpoints: ["na-us-0000-test-cs01:eth3", "na-us-0000-test-ds01:eth3"]
+    - endpoints: ["na-us-0000-test-cs01:eth4", "na-us-0000-test-ds01:eth4"]
+    - endpoints: ["na-us-0000-test-cs01:eth5", "na-us-0000-test-fwl01:eth1"]
+    - endpoints: ["na-us-0000-test-cs01:eth6", "na-us-0000-test-fwl01:eth2"]
+    - endpoints: ["na-us-0000-test-ds01:eth5", "na-us-0000-test-as01:eth1"]
+    - endpoints: ["na-us-0000-test-ds01:eth6", "na-us-0000-test-as01:eth2"]
+    - endpoints: ["na-us-0000-test-ds01:eth7", "na-us-0000-test-as02:eth1"]
+    - endpoints: ["na-us-0000-test-ds01:eth8", "na-us-0000-test-as02:eth2"]
+    - endpoints: ["na-us-0000-test-ds01:eth9", "na-us-0000-test-as03:eth1"]
+    - endpoints: ["na-us-0000-test-ds01:eth10", "na-us-0000-test-as03:eth2"]
+    - endpoints: ["na-us-0000-test-as03:eth4", "br-dumbhub:eth1"]
+    - endpoints: ["desktop1:eth1", "na-us-0000-test-as01:eth3"]
+    - endpoints: ["desktop2:eth1", "na-us-0000-test-as02:eth3"]
+    - endpoints: ["desktop3:eth1", "na-us-0000-test-as03:eth3"]
+    - endpoints: ["desktop4:eth1", "br-dumbhub:eth2"]
+    - endpoints: ["desktop5:eth1", "br-dumbhub:eth3"]
+
+
+
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth4
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth5
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth6
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth7
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth8
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth9
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth10
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth11
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as01
+        interface: eth12
+
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth4
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth5
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth6
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth7
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth8
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth9
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth10
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth11
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as02
+        interface: eth12
+
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth5
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth6
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth7
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth8
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth9
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth10
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth11
+    - type: dummy
+      endpoint:
+        node: na-us-0000-test-as03
+        interface: eth12

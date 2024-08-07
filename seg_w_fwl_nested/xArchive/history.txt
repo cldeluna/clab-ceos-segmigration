@@ -1,0 +1,1000 @@
+  282  cd vrnetlab/
+  283  ls
+  284  vrnetlab version
+  285  which vrnetlab
+  286  where vrnetlab
+  287  cd n9kv
+  288  ls
+  289  cat README.md 
+  290  docker logs -f clab-cisco-vpc-n9kv-n9k-cs01
+  291  ls
+  292  cd containerlabs/
+  293  ls
+  294  cd clab-cisco-n9kv/
+  295  ls
+  296  history
+  297  cat /proc/meminfo | grep Mem
+  298  vi ~/.bashrc
+  299  source ~/.bashrc
+  300  mme
+  301  mem
+  302  sudo containerlab deploy
+  303  sudo containerlab deploy --reconfigure
+  304  history | grep ssh
+  305  ssh admin@172.20.20.21
+  306  vi /etc/ssh/sshd_config
+  307  vi ~/.ssh/known_hosts
+  308  ssh admin@172.20.20.21
+  309  ssh admin@172.20.20.22
+  310  mem
+  311  ssh admin@172.20.20.21
+  312  sudo systemctl restart sshd
+  313  ssh admin@172.20.20.21
+  314  docker exec -it clab-cisco-vpc-n9kv-n9k-cs01
+  315  docker exec -it clab-cisco-vpc-n9kv-n9k-cs01 cli
+  316  docker exec -it clab-cisco-vpc-n9kv-n9k-cs01 bash
+  317  docker exec -it clab-cisco-vpc-n9kv-n9k-cs02 bash
+  318  ssh admin@172.20.20.21
+  319  ssh admin@172.20.20.22
+  320  vi ~/.ssh/known_hosts
+  321  ssh admin@172.20.20.21
+  322  sudo containerlab inspect
+  323  ping 172.20.20.21
+  324  ping 172.20.20.20
+  325  ssh admin@172.20.20.21
+  326  history | grep docker
+  327  docker image ls
+  328  ssh admin@172.20.20.21
+  329  sudo containerlab inspect
+  330  ssh admin@172.20.20.21
+  331  telnet clab-cisco-vpc-n9kv-n9k-cs01 5000
+  332  docker exec -it clab-cisco-vpc-n9kv-n9k-cs02 bash
+  333  history
+  334  docker image ls
+  335  cd ..
+  336  ls
+  337  cd vrnetlab/
+  338  ls
+  339  cd n9kv/
+  340  ls
+  341  cd ..
+  342  ld
+  343  ls
+  344  sl
+  345  ls
+  346  ssh cisco@172.20.20.3
+  347  pwd
+  348  sudo -s
+  349  pwd
+  350  sudo -s
+  351  pwd
+  352  sudo apt-get update
+  353  pwd
+  354  ssh cisco@172.20.20.3
+  355  pwd
+  356  sudo -s
+  357  pwd
+  358  sudo -s
+  359  pwd
+  360  sudo -s
+  361  pwd
+  362  ssh cisco@172.20.20.3
+  363  pwd
+  364  pwd
+  365  sudo -s
+  366  pwd
+  367  sudo -s
+  368  pwd
+  369  sudo -s
+  370  pwd
+  371  pwd
+  372  sudo apt-get update
+  373  sudo -s
+  374  ip add
+  375  ls
+  376  cd containerlabs/
+  377  ls
+  378  cd clab-quickstart/
+  379  ls
+  380  cat srlceos01.clab.yml 
+  381  history
+  382  cd .
+  383  ls
+  384  cd ..
+  385  clab 
+  386  cd clab-quickstart/
+  387  containerlab inspect
+  388  sudo containerlab inspect
+  389  ssh -o StrictHostKeyChecking=no cisco@172.20.20.2
+  390  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.2"
+  391  ssh -o StrictHostKeyChecking=no cisco@172.20.20.2
+  392  ls
+  393  ssh -o StrictHostKeyChecking=no cisco@172.20.20.3
+  394  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.3"
+  395  ssh -o StrictHostKeyChecking=no cisco@172.20.20.3
+  396  df -h
+  397  du -h
+  398  du
+  399  du -l
+  400  du
+  401  df
+  402  du -l
+  403  df
+  404  ls -al
+  405  cd containerlabs/
+  406  ls
+  407  cd clab-quickstart/
+  408  ls -al
+  409  cd ..
+  410  ls
+  411  rm -rf vrnetlab/
+  412  ls
+  413  df
+  414  df 
+  415  df
+  416  cd ..
+  417  ls
+  418  cd ~
+  419  ls
+  420  cd containerlabs/
+  421  ls
+  422  df -H
+  423  df -H --output=size,used,avail
+  424  df -H --output=source,size,used,avail
+  425  du -h /dev/vda1
+  426  du -h ~/
+  427  du -h /
+  428  du -a / | sort -n -r | head -n 10
+  429  sudo du -a / | sort -n -r | head -n 10
+  430  cd /var/lib/docker/
+  431  sudo cd /var/lib/docker
+  432  docker status
+  433  docker 
+  434  docker list
+  435  docker images
+  436  df
+  437  docker
+  438  sudo docker 
+  439  docker info
+  440  docker container ls -a
+  441  sudo systemclt start docker
+  442  sudo systemctl start docker
+  443  docker container ls -a
+  444  docker ps
+  445  docker ps -a
+  446  docker container prune
+  447  docker ps -a
+  448  docker container ls -a
+  449  docker ps -a
+  450  df 
+  451  ls
+  452  cd clab-quickstart/
+  453  ls
+  454  containerlab deploy
+  455  sudo containerlab deploy
+  456  ls
+  457  cat srlceos01.clab.yml 
+  458  ssh 172.20.20.2
+  459  ssh root@172.20.20.2
+  460  ls
+  461  cat ceos.cfg 
+  462  ssh cisco@172.20.20.2
+  463  ls
+  464  vi srlceos01.clab.yml 
+  465  sudo containerlab destroy
+  466  ls
+  467  vi srlceos01.clab.yml
+  468  sudo containerlab destroy
+  469  vi srlceos01.clab.yml
+  470  sudo containerlab deploy
+  471  vi srlceos01.clab.yml
+  472  brctl addbr br-dummy
+  473  sudo apt install bridge-utils
+  474  sudo apt-get update
+  475  sudo apt-get install bridge-utils
+  476  sudo apt install bridge-utils
+  477  sudo /etc/bind/named.conf.options
+  478  sudo systemctl restart systemd-resolved
+  479  ping www.google.com
+  480  ping archive.ubuntu.com
+  481  sudo apt-get install bridge-utils
+  482  brctl addbr br-dummy
+  483  sudo brctl addbr br-dummy
+  484  ls
+  485  cat srlceos01.clab.yml 
+  486  containerlab deploy
+  487  sudo containerlab deploy
+  488  vi srlceos01.clab.yml
+  489  cat srlceos01.clab.yml 
+  490  pwd
+  491  vi srlceos01.clab.yml
+  492  cat srlceos01.clab.yml 
+  493  touch /home/claudia/containerlabs/ceos_mapping24.json
+  494  ls
+  495  cd ..
+  496  ls
+  497  vi ceos_mapping24.json 
+  498  cd clab-quickstart/
+  499  ls
+  500  sudo containerlab deploy
+  501  vi srlceos01.clab.yml
+  502  sudo containerlab deploy
+  503  ssh cisco@172.20.20.2
+  504  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.2"
+  505  ssh cisco@172.20.20.2
+  506  sudo containerlab destroy
+  507  ls
+  508  cd ..
+  509  ls
+  510  mv ceos_mapping24.json ./clab-quickstart/
+  511  ls
+  512  cd clab
+  513  cd clab-quickstart/
+  514  ls
+  515  vi srlceos01.clab.yml 
+  516  sudo containerlab deploy
+  517  ssh cisco@172.20.20.2
+  518  sudo containerlab destroy
+  519  intf
+  520  ip add
+  521  vi srlceos01.clab.yml 
+  522  ls
+  523  vi ceos_mapping24.json 
+  524  sudo containerlab deploy
+  525  ssh cisco@172.20.20.2
+  526  docker exec -it clab-srlceos01-ceos1
+  527  docker exec -it clab-srlceos01-ceos1 bash
+  528  docker exec -it clab-srlceos01-ceos1 cli
+  529  docker exec -it clab-srlceos01-ceos1 bash
+  530  ip add
+  531  sudo containerlab destroy
+  532  vi srlceos01.clab.yml 
+  533  sudo containerlab deploy
+  534  ssh cisco@172.20.20.2
+  535  ls
+  536  cat ceos.cfg
+  537  cd ..
+  538  mkdir new_l2vlan_lab
+  539  cd new_l2vlan_lab/
+  540  cd ..
+  541  cd clab-quickstart/
+  542  ls
+  543  cat clab-srlceos01/
+  544  cat srlceos01.clab.yml 
+  545  cd ..
+  546  cd new_l2vlan_lab/
+  547  ls
+  548  vi newl2vlan.clab.yml
+  549  sudo containerlab deploy
+  550  vi newl2vlan.clab.yml
+  551  sudo containerlab deploy
+  552  cat ../clab-quickstart/ceos.cfg 
+  553  ls
+  554  cat newl2vlan.clab.yml 
+  555  vi ceos_upstream.cfg
+  556  vi ceos_access.cfg
+  557  vi ceos_upstream.cfg
+  558  sudo containerlab deploy
+  559  sudo containerlab destroy
+  560  sudo containerlab deploy
+  561  sudo containerlab destroy
+  562  cd ..
+  563  cd clab-quickstart/
+  564  sudo containerlab destroy
+  565  cd ..
+  566  cd new_l2vlan_lab/
+  567  ls
+  568  sudo containerlab deploy
+  569  ssh cisco@172.20.20.2
+  570  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.2"
+  571  ssh cisco@172.20.20.2
+  572  ssh cisco@172.20.20.3
+  573  ls
+  574  vi newl2vlan.clab.yml 
+  575  ssh cisco@172.20.20.3
+  576  sudo cat /root/.docker/config.json
+  577  cd ..
+  578  ls
+  579  ls -al
+  580  cd .docker
+  581  ls
+  582  cat config.json 
+  583  cd ..
+  584  ls
+  585  cat .bashrc
+  586  history | grep docker
+  587  ip add
+  588  ls
+  589  cd containerlabs/
+  590  ls
+  591  cd new_l2vlan_lab/
+  592  ls
+  593  sudo containerlab destroy
+  594  ls
+  595  cat newl2vlan.clab.yml 
+  596  sudo containerlab deploy
+  597  sudo containerlab destroy
+  598  pwd
+  599  sudo apt-get update
+  600  sudo -s
+  601  ls
+  602  python3 -V
+  603  ls
+  604  cd containerlabs/
+  605  uname -a
+  606  mem
+  607  ls
+  608  cd new_l2vlan_lab/
+  609  sudo containerlab destroy -a
+  610  ls
+  611  cd ..
+  612  ls
+  613  cd clab-quickstart/
+  614  sudo containerlab destroy -a
+  615  ls
+  616  cd ..
+  617  ls
+  618  mkdir seg-migration
+  619  cd seg-migration/
+  620  vi seg-mig.clab.yml
+  621  sudo containerlab deploy
+  622  sudo containerlab version upgrade
+  623  sudo containerlab deploy
+  624  sudo containerlab graph --mermaid
+  625  containerlab version
+  626  containerlab graph
+  627  ls
+  628  containerlab graph --topo seg-mig.clab.yml --mermaid
+  629  sudo containerlab graph --topo seg-mig.clab.yml --mermaid
+  630  sudo containerlab graph --topo seg-mig.clab.yml 
+  631  sudo containerlab graph
+  632  containerlab version
+  633  sudo containerlab destroy -a
+  634  cd ..
+  635  ls
+  636  vi seg-mig-nodummy
+  637  ls
+  638  mkdir seg-mig-nodummy
+  639  cd seg-mig-nodummy/
+  640  ls
+  641  vi seg-mig-nodummy.clab.yml
+  642  ls
+  643  sudo containerlab deploy
+  644  sudo containerlab graph --mermaid
+  645  ls
+  646  cd clab-seg-mig-nodummy/
+  647  ls
+  648  cd graph/
+  649  ls
+  650  cat seg-mig-nodummy.clab.mermaid 
+  651  sudo containerlab destroy -a
+  652  ls
+  653  vi seg-mig-nodummy.clab.mermaid 
+  654  cd ..
+  655  ls
+  656  vi seg-mig-nodummy.clab.yml 
+  657  sudo containerlab deploy
+  658  sudo containerlab graph --mermaid
+  659  cat /home/claudia/containerlabs/seg-mig-nodummy/clab-ceosSegMigrationCampus/graph/seg-mig-nodummy.clab.mermaid
+  660  cd ..
+  661  ls
+  662  ssh admin@172.20.20.21
+  663  ls
+  664  cd seg-mig-nodummy/
+  665  sudo containerlab destroy -a
+  666  cd ..
+  667  ls
+  668  cd seg-migration/
+  669  ls
+  670  sudo containerlab deploy
+  671  ssh admin@172.20.20.21
+  672  sh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.21"
+  673  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.21"
+  674  ssh admin@172.20.20.21
+  675  mem
+  676  pwd
+  677  ls
+  678  cd containerlabs/
+  679  ls
+  680  cd images/
+  681  ls
+  682  docker images
+  683  df -h
+  684  ls
+  685  docker import cEOS64-lab-4.32.0.1F.tar ceos:4.32.0.1F
+  686  ls -al
+  687  docker import cEOS64-lab-4.32.0.1F.tar ceos:4.32.0.1F
+  688  docker import cEOS64-lab-4.32.1F.tar ceos:4.32.1F
+  689  ls
+  690  rm -rf cEOS64-lab-4.32.0.1F.tar 
+  691  ls -al
+  692  docker images
+  693  docker pull ubuntu:22.04
+  694  docker images
+  695  docker pull networkboot/dhcpd
+  696  ls -al
+  697  cd ..
+  698  ls
+  699  docker images
+  700  ls
+  701  mkdir cds-dhcp
+  702  cd cds-dhcp/
+  703  vi campus-dhcp.clab.yml
+  704  vi dhcpd.conf
+  705  cat campus-dhcp.clab.yml 
+  706  sudo clab deploy
+  707  cd ..
+  708  ls
+  709  cd seg-migration/
+  710  sudo clab status
+  711  sudo clan ls
+  712  sudo clab ls
+  713  sudo clab 
+  714  sudo clab inspect
+  715  sudo clab destroy -a
+  716  sudo clab inspect
+  717  cd ..
+  718  ls
+  719  cd cds-dhcp/
+  720  ls
+  721  sudo clab deploy --reconfigure
+  722  sudo clab destroy -a
+  723  docker pull networkboot/dhcpd
+  724  docker run -it networkboot/dhcpd
+  725  ls
+  726  mkdir data
+  727  pwd
+  728  docker run -it networkboot/dhcpd -v "$(pwd)/containerlabs/cds-dhcp/data:/data"
+  729  ls
+  730  cat campus-dhcp.clab.yml 
+  731  ls
+  732  cd data
+  733  ls
+  734  docker run -it networkboot/dhcpd -v "$(pwd)/containerlabs/cds-dhcp/data:/data"
+  735  docker run -it -v "$(pwd)/containerlabs/cds-dhcp/data:/data" networkboot/dhcpd
+  736  ls
+  737  cd ..
+  738  ls
+  739  cp dhcpd.conf data/
+  740  ls
+  741  ls data/
+  742  rm -rf data/containerlabs/
+  743  sudo rm -rf data/containerlabs/
+  744  ls data/
+  745  docker run -it -v "$(pwd)/containerlabs/cds-dhcp/data:/data" networkboot/dhcpd
+  746  ls
+  747  cd data
+  748  ls
+  749  ls -al
+  750  chmod +rw dhcpd.conf 
+  751  ls -al
+  752  cat dhcpd.conf 
+  753  cd ..
+  754  ls
+  755  cd data
+  756  pwd
+  757  docker run -it -v "/home/claudia/containerlabs/cds-dhcp/data:/data" networkboot/dhcpd
+  758  ls
+  759  vi dhcpd.conf 
+  760  cat dhcpd.conf 
+  761  docker run -it -v "/home/claudia/containerlabs/cds-dhcp/data:/data" networkboot/dhcpd
+  762  docker run -it ubunut:latest
+  763  docker run -it ubuntu:latest
+  764  docker run ubuntu:latest /bin/bash -c "apt update; apt install -y iproute2 iputils-ping"
+  765  docker ls
+  766  docker ps
+  767  docker run ubuntu:latest /bin/bash -c "apt update; apt install -y iproute2 iputils-ping" -it
+  768  docker run -it ubuntu:latest /bin/bash -c "apt update; apt install -y iproute2 iputils-ping" 
+  769  docker ps -a
+  770  docker run ubuntu:latest /bin/bash -c "apt update; apt install -y iproute2 iputils-ping" 
+  771  docker ps -a
+  772  docker ps
+  773  docker run -td ubuntu:latest /bin/bash -c "apt update; apt install -y iproute2 iputils-ping" 
+  774  docker ps
+  775  docker exec -it 6496eb2fc0f6
+  776  docker exec -it 6496eb2fc0f6 bash
+  777  docker ps
+  778  docker run -td ubuntu:latest /bin/bash -c "apt update; apt install -y iproute2 iputils-ping" 
+  779  docker ps
+  780  docker exec -it 670bdb686558 bash
+  781  docker ps
+  782  docker run -td ubuntu:latest /bin/bash -c "apt update; apt install -y iproute2 iputils-ping" 
+  783  docker ps
+  784  docker -it ubuntu:latest
+  785  docker run -it ubuntu:latest
+  786  docker ps
+  787  docker ps -a
+  788  docker container prune
+  789  docker ps -a
+  790  docker run -it ubuntu:latest
+  791  ls
+  792  cd ..
+  793  ls
+  794  cd ..
+  795  ls
+  796  cd cd cds-dhcp/
+  797  cd cds-dhcp/
+  798  ls
+  799  vi campus-dhcp.clab.yml 
+  800  sudo clab deploy
+  801  vi campus-dhcp.clab.yml 
+  802  sudo clab deploy --reconfigure
+  803  sudo clab destroy -a
+  804  cd ..
+  805  ls
+  806  mkdir cds-seg
+  807  vi cds-seg
+  808  cd cds-seg/
+  809  ls
+  810  pwd
+  811  vi cds-seg.clab.yml
+  812  ls
+  813  vi na-us-0000-test-cs01.cfg
+  814  ls
+  815  sudo clab deploy
+  816  sudo clab destroy -a
+  817  ls
+  818  ls -al
+  819  sudo clab deploy
+  820  ssh admin@clab-cds-seg-na-us-0000-test-as01
+  821  ssh admin@clab-cds-seg-na-us-0000-test-cs01
+  822  ssh admin@clab-cds-seg-na-us-0000-test-as01
+  823  ssh admin@clab-cds-seg-na-us-0000-test-ds01
+  824  ssh admin@clab-cds-seg-na-us-0000-test-cs01
+  825  ssh admin@clab-cds-seg-na-us-0000-test-as01
+  826  ls
+  827  cd ..
+  828  ls
+  829  sudo clab inspect
+  830  cd cds-seg/
+  831  sudo clab inspect
+  832  ssh admin@clab-cds-seg-desktop
+  833  docker exec 0it clab-cds-seg-desktop bash
+  834  docker exec -it clab-cds-seg-desktop bash
+  835  ssh admin@clab-cds-seg-na-us-0000-test-cs01
+  836  clab graph -t
+  837  clab graph 
+  838  clab graph --drawio
+  839  ls
+  840  ls -al
+  841  cat cds-seg.clab.drawio 
+  842  ls
+  843  mkdir test
+  844  cd test
+  845  ls
+  846  git --version
+  847  git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+  848  ls
+  849  cd ..
+  850  ls
+  851  cd cds-seg/
+  852  sudo clab inspect
+  853  cd ..
+  854  test
+  855  cd test
+  856  ls
+  857  cd ..
+  858  ls
+  859  pwd
+  860  git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+  861  ls -al
+  862  git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+  863  cd clab-ceos-segmigration/
+  864  ls
+  865  cd ..
+  866  ls
+  867  cd cds-seg/
+  868  sudo clab destroy
+  869  sudo clab deploy
+  870  ssh admin@clab-cds-seg-na-us-0000-test-cs01
+  871  sudo clab destroy
+  872  cd ..
+  873  ls
+  874  rm -rf clab-ceos-segmigration/
+  875  pwd
+  876  rm -rf test
+  877  ls
+  878  rm -rf seg-mig-nodummy/
+  879  sudo rm -rf seg-mig-nodummy/
+  880  ls -al
+  881  pwd
+  882  ls -al
+  883  git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+  884  ls -al
+  885  cd clab-ceos-segmigration/
+  886  ls
+  887  sudo clab deploy -t cds-seg.clab.yml 
+  888  sudo clab destroy
+  889  ls
+  890  cd containerlabs/
+  891  ls
+  892  cd cds-seg
+  893  clab inspect
+  894  sudo clan inspect
+  895  sudo clab inspect
+  896  ssh admin@172.20.20.10
+  897  sudo clab destroy -a
+  898  mem
+  899  # Before clab cds-seg
+  900  mem
+  901  sudo clab deploy --reconfigure
+  902  # After clab cds-seg deploy
+  903  mem
+  904  ssh admin@172.20.20.11
+  905  sudo clab inspect
+  906  ssh admin@clab-cds-seg-na-us-0000-test-ds01
+  907  sudo clab destroy -a
+  908  ls
+  909  vi na-us-0000-test-cs01.cfg 
+  910  vi cds-seg.clab.yml 
+  911  ls
+  912  vi na-us-0000-test-ds01.cfg
+  913  vi cds-seg.clab.yml 
+  914  sudo clab deploy --reconfigure
+  915  ssh admin@clab-cds-seg-na-us-0000-test-ds01
+  916  ssh admin@clab-cds-seg-na-us-0000-test-as01
+  917  ls
+  918  cd containerlabs/
+  919  ls
+  920  cd cds-seg/
+  921  ls
+  922  sudo clab instpect
+  923  sudo clab inspect
+  924  history
+  925  history | grep docker
+  926  docker exec -it clab-cds-seg-desktop sh
+  927  docker exec -it clab-cds-seg-desktop bash
+  928  cd containerlabs/
+  929  ls
+  930  cd cds-seg/
+  931  ls
+  932  sudo clab inspec
+  933  sudo clab inspect
+  934  ssh admin@172.20.20.31
+  935  sudo clab inspect
+  936  ssh admin@172.20.20.20
+  937  cd containerlabs/cds-seg/
+  938  sudo clab inspect
+  939  docker exec -it clab-cds-seg-desktop bash
+  940  cd ..
+  941  ls
+  942  ls -al
+  943  cd armando/
+  944  ls
+  945  sudo cd armando
+  946  su - root
+  947  sudo -i
+  948  su -
+  949  sudo passwd root
+  950  su -
+  951  sudo passwd -dl root
+  952  sudo -s
+  953  cd claudia/
+  954  ls
+  955  cd containerlabs/
+  956  ls
+  957  cd cds-seg/
+  958  ls
+  959  sudo clab inspect
+  960  ssh admin@172.20.20.10
+  961  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.10"
+  962  ssh admin@172.20.20.10
+  963  sudo clab save
+  964  cat /home/claudia/containerlabs/cds-seg/clab-cds-seg/na-us-0000-test-cs01/flash/startup-config
+  965  ls
+  966  sudo clab save -t cds-seg.clab.yml 
+  967  cat /home/claudia/containerlabs/cds-seg/clab-cds-seg/na-us-0000-test-cs01/flash/startup-config
+  968  ssh admin@172.20.20.10
+  969  sudo clab inspect
+  970  ssh admin@172.20.20.20
+  971  ls
+  972  cd ..
+  973  ls
+  974  mkdir test
+  975  cd test
+  976  vi test.clab.yml
+  977  sudo clab deploy
+  978  vi test.clab.yml
+  979  sudo clab deploy
+  980  vi test.clab.yml
+  981  sudo clab deploy
+  982  cd containerlabs/
+  983  cd cds-seg/
+  984  sudo clab inspect
+  985  ssh admin@172.20.20.20
+  986  sudo clab inspect
+  987  cd containerlabs/
+  988  cd cds-seg/
+  989  ls
+  990  sudo clab inspect
+  991  ssh admin@172.20.20.31
+  992  cd containerlabs/cds-seg/
+  993  sudo clab inspect
+  994  ssh admin@172.20.20.31
+  995  sudo clab destroy -a
+  996  sudo clab inspect
+  997  cd ..
+  998  ls
+  999  cd test
+ 1000  ls
+ 1001  sudo clab inspect
+ 1002  rm -rf *
+ 1003  ls
+ 1004  git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+ 1005  ls
+ 1006  cd clab-ceos-segmigration/
+ 1007  ls
+ 1008  sudo clab -t cds-seg-fwl.clab.yml deploy
+ 1009  mem
+ 1010  sudo clab 
+ 1011  sudo clab -t cds-seg-fwl.clab.yml inspect
+ 1012  sudo clab -t cds-seg-fwl.clab.yml destroy -a
+ 1013  sudo clab -t cds-seg-fwl.clab.yml deploy
+ 1014  sudo clab -t cds-seg-fwl.clab.yml inspect
+ 1015  sudo clab -t cds-seg-fwl.clab.yml destroy -a
+ 1016  git pull
+ 1017  sudo clab -t cds-seg-fwl.clab.yml deploy
+ 1018  sudo clab -t cds-seg-fwl.clab.yml destroy -a
+ 1019  git pull
+ 1020  sudo clab -t cds-seg-fwl.clab.yml deploy
+ 1021  ssh admin@172.20.20.31
+ 1022  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.31"
+ 1023  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.32"
+ 1024  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.33"
+ 1025  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.10"
+ 1026  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.20"
+ 1027  ssh admin@172.20.20.31
+ 1028  sudo clab -t cds-seg-fwl.clab.yml inspect
+ 1029  ssh admin@172.20.20.3
+ 1030  docker exec -it 172.20.20.3 bash
+ 1031  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1032  ssh admin@172.20.20.10
+ 1033  sudo clab -t cds-seg-fwl.clab.yml destroy -a
+ 1034  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.10"
+ 1035  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.31"
+ 1036  git pull
+ 1037  sudo clab -t cds-seg-fwl.clab.yml deploy
+ 1038  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1039  sudo clab -t cds-seg-fwl.clab.yml inspect
+ 1040  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1041  ssh admin@172.20.20.20
+ 1042  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1043  ssh admin@172.20.20.20
+ 1044  ssh admin@172.20.20.66
+ 1045  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1046  ssh admin@172.20.20.20
+ 1047  ssh admin@172.20.20.31
+ 1048  ssh admin@172.20.20.10
+ 1049  ls
+ 1050  cd ..
+ 1051  ls
+ 1052  rm -rf *
+ 1053  cd clab-ceos-segmigration/
+ 1054  sudo clab -t cds-seg-fwl.clab.yml destroy -a
+ 1055  ls -al
+ 1056  rm -rf clab-cds-seg-fwl/
+ 1057  ls
+ 1058  cd ..
+ 1059  ls
+ 1060  rm clab-ceos-segmigration/
+ 1061  rm -rf clab-ceos-segmigration/
+ 1062  ls
+ 1063  git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+ 1064  ls
+ 1065  cd clab-ceos-segmigration/
+ 1066  ls
+ 1067  cd seg_w_fwl/
+ 1068  ls
+ 1069  sudo clab deploy
+ 1070  sudo clab deploy --reconfigure
+ 1071  sudo clab destroy -a
+ 1072  ls
+ 1073  vi cds-seg-fwl.clab.yml 
+ 1074  sudo clab deploy --reconfigure
+ 1075  sudo clab destroy -a
+ 1076  which apt
+ 1077  vi cds-seg-fwl.clab.yml 
+ 1078  sudo clab deploy --reconfigure
+ 1079  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1080  vi cds-seg-fwl.clab.yml 
+ 1081  ssh admin@172.20.20.10
+ 1082  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.10"
+ 1083  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.20"
+ 1084  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.31"
+ 1085  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.32"
+ 1086  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.33"
+ 1087  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.66"
+ 1088  ssh admin@172.20.20.10
+ 1089  ssh admin@172.20.20.20
+ 1090  ls
+ 1091  sudo clab destroy -a
+ 1092  git pull
+ 1093  cd ..
+ 1094  git pull
+ 1095  git stash seg_w_fwl/cds-seg-fwl.clab.yml
+ 1096  git pull
+ 1097  git stash seg_w_fwl/cds-seg-fwl.clab.yml
+ 1098  git stash save seg_w_fwl/cds-seg-fwl.clab.yml
+ 1099  git pull
+ 1100  ls
+ 1101  cd seg_w_fwl/
+ 1102  ls
+ 1103  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.10"
+ 1104  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.20"
+ 1105  sudo clab deploy --reconfigure
+ 1106  ssh admin@172.20.20.20
+ 1107  ssh admin@172.20.20.10
+ 1108  cd containerlabs/
+ 1109  ls
+ 1110  cd test
+ 1111  ls
+ 1112  cd clab-ceos-segmigration/
+ 1113  ls
+ 1114  cd seg_w_fwl/
+ 1115  ssh admin@172.20.20.20
+ 1116  ssh admin@172.20.20.31
+ 1117  ssh admin@172.20.20.20
+ 1118  docker exec -it clab-cds-seg-desktop bash
+ 1119  docker exec -it clab-cds-seg-desktop1 bash
+ 1120  sudo clab inspect
+ 1121  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1122  clab graph --drawio
+ 1123  ls
+ 1124  cat cds-seg-fwl.clab.drawio 
+ 1125  sudo clab inspect
+ 1126  cd containerlabs/test/
+ 1127  ls
+ 1128  cd clab-ceos-segmigration/
+ 1129  ls
+ 1130  sudo clab -t cds-seg-fwl.clab.yml inspect
+ 1131  ssh admin@172.20.20.10/2
+ 1132  ssh admin@172.20.20.10
+ 1133  ls
+ 1134  cd ..
+ 1135  ls
+ 1136  cd clab-ceos-segmigration/
+ 1137  ls
+ 1138  cd seg_w_fwl/
+ 1139  ls
+ 1140  sudo clab inspect
+ 1141  ssh admin@172.20.20.66
+ 1142  ssh admin@172.20.20.31
+ 1143  ls
+ 1144  cd containerlabs/
+ 1145  ls
+ 1146  cd test/
+ 1147  ls
+ 1148  cd clab-ceos-segmigration/
+ 1149  ls -al
+ 1150  sudo clab inspect
+ 1151  ls
+ 1152  cd seg_w_fwl/
+ 1153  ls
+ 1154  sudo clab inspect
+ 1155  ssh admin@172.20.20.66
+ 1156  ls
+ 1157  cd ..
+ 1158  ls
+ 1159  cd clab-ceos-segmigration/
+ 1160  ls
+ 1161  cd seg_w_fwl/
+ 1162  ls
+ 1163  clab graph --drawio
+ 1164  mem
+ 1165  ls
+ 1166  cd containerlabs/
+ 1167  ls
+ 1168  cd test
+ 1169  ls
+ 1170  cd clab-ceos-segmigration/
+ 1171  ls
+ 1172  cd seg_w_fwl/
+ 1173  ls
+ 1174  sudo clab inspect
+ 1175  ssh admin@172.20.20.10
+ 1176  ssh admin@172.20.20.20
+ 1177  ssh admin@172.20.20.31
+ 1178  sudo clab inspect
+ 1179  docker exec -it clab-cds-seg-fwl-desktop1 bash
+ 1180  ssh admin@172.20.20.31
+ 1181  cd ..
+ 1182  ls
+ 1183  cd ..
+ 1184  ls
+ 1185  rm -rf clab-ceos-segmigration/
+ 1186  ls
+ 1187  cd clab-ceos-segmigration/
+ 1188  ls
+ 1189  rm -rf seg_w_fwl/
+ 1190  ls
+ 1191  cd ..
+ 1192  ls
+ 1193  rm -rf clab-ceos-segmigration/
+ 1194  ls
+ 1195  git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+ 1196  ls
+ 1197  cd clan
+ 1198  cd clab
+ 1199  ls
+ 1200  cd clab-ceos-segmigration/
+ 1201  ls
+ 1202  cd seg_w_fwl/
+ 1203  ls
+ 1204  sudo clab deploy
+ 1205  cd ..
+ 1206  git pull
+ 1207  cd seg_w_fwl/
+ 1208  ls
+ 1209  sudo clab deploy
+ 1210  sudo clab deploy --reconfigure
+ 1211  sudo clab inspect
+ 1212  cd ..
+ 1213  sudo clab inspect
+ 1214  cd seg_w_fwl/
+ 1215  sudo clab destroy -a
+ 1216  sudo clab deploy --reconfigure
+ 1217  mem
+ 1218  sudo clab inspect
+ 1219  mem
+ 1220  cd containerlabs/
+ 1221  ls
+ 1222  cd test/
+ 1223  ls
+ 1224  cd clab-ceos-segmigration/
+ 1225  ls
+ 1226  cd seg_w_fwl/
+ 1227  ls
+ 1228  sudo clab instpect
+ 1229  sudo clab inspect
+ 1230  sudo clab destroy -a
+ 1231  time ls
+ 1232  time sudo clab deploy --reconfigure
+ 1233  jls
+ 1234  ls
+ 1235  cd containerlabs/
+ 1236  l
+ 1237  scd test/
+ 1238  cd test
+ 1239  ls
+ 1240  cd clab-ceos-segmigration/
+ 1241  ls
+ 1242  cd seg_w_fwl/
+ 1243  ls
+ 1244  sudo clab inspect
+ 1245  ssh admin@172.20.20.33
+ 1246  ls
+ 1247  sudo ip link add name br-dumbhub type bridge
+ 1248  sudo ip link set dev br-dumbhub up
+ 1249  sudo ip link add name br-dumbhub type bridge
+ 1250  ls
+ 1251  sudo clab destroy -a
+ 1252  vi cds-seg-fwl.clab.yml
+ 1253  sudo clab deploy --reconfigure
+ 1254  vi cds-seg-fwl.clab.yml
+ 1255  sudo clab deploy --reconfigure
+ 1256  vi cds-seg-fwl.clab.yml
+ 1257  sudo clab deploy --reconfigure
+ 1258  sudo brctl show br-dumbhub
+ 1259  vi cds-seg-fwl.clab.yml
+ 1260  sudo clab deploy --reconfigure
+ 1261  ls
+ 1262  cd containerlabs/
+ 1263  ls
+ 1264  cd test
+ 1265  ls
+ 1266  cd clab-ceos-segmigration/
+ 1267  ls
+ 1268  cd seg_w_fwl/
+ 1269  ls
+ 1270  sudo clab inspect
+ 1271  ssh admin#172.20.20.33
+ 1272  ssh admin@172.20.20.33
+ 1273  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.33"
+ 1274  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.32"
+ 1275  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.31"
+ 1276  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.10"
+ 1277  ssh-keygen -f "/home/claudia/.ssh/known_hosts" -R "172.20.20.20"
+ 1278  ssh admin@172.20.20.33
+ 1279  history
+ 1280  history > hisotry.txt
+ 1281  history > history.txt
