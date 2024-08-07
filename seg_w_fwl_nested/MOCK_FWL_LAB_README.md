@@ -21,6 +21,13 @@ bridge name	bridge id		STP enabled	interfaces
 br-dumbhub		8000.8e3bd5bfa0f4	no		eth1
 ```
 
+Tip:  
+If your system does not recognize the `brctl` command, you need to install the package:
+```bash
+sudo apt update
+sudo apt install bridge-utils
+```
+
 2. Make sure you don't have a lab running
 From the directory
 ```bash
@@ -71,6 +78,41 @@ sys	0m0.007s
 
 ```
 
+
+#### Clone Steps
+
+```bash
+
+claudia@ubuntu:~/containerlabs$ ls
+cds-dhcp  cds-seg  clab-ceos-segmigration  clab-quickstart  images  new_l2vlan_lab  seg-migration  test
+claudia@ubuntu:~/containerlabs$ mkdir test2
+claudia@ubuntu:~/containerlabs$ cd test2
+claudia@ubuntu:~/containerlabs/test2$
+claudia@ubuntu:~/containerlabs/test2$
+claudia@ubuntu:~/containerlabs/test2$ ls
+claudia@ubuntu:~/containerlabs/test2$ sudo brctl show br-dumbhub
+bridge name	bridge id		STP enabled	interfaces
+br-dumbhub		8000.8e3bd5bfa0f4	no
+claudia@ubuntu:~/containerlabs/test2$ git clone https://github.com/cldeluna/clab-ceos-segmigration.git
+Cloning into 'clab-ceos-segmigration'...
+remote: Enumerating objects: 108, done.
+remote: Counting objects: 100% (108/108), done.
+remote: Compressing objects: 100% (64/64), done.
+remote: Total 108 (delta 66), reused 82 (delta 40), pack-reused 0
+Receiving objects: 100% (108/108), 216.28 KiB | 2.54 MiB/s, done.
+Resolving deltas: 100% (66/66), done.
+claudia@ubuntu:~/containerlabs/test2$ ls
+clab-ceos-segmigration
+claudia@ubuntu:~/containerlabs/test2$ cd clab-ceos-segmigration/
+claudia@ubuntu:~/containerlabs/test2/clab-ceos-segmigration$ ls
+README.md  base  cds-seg.clab.drawio.png  cds-seg.clab.yml  dummy_lab  na-us-0000-test-as01.cfg  na-us-0000-test-as02.cfg  na-us-0000-test-as03.cfg  na-us-0000-test-cs01.cfg  na-us-0000-test-ds01.cfg  seg_w_fwl  seg_w_fwl_nested
+claudia@ubuntu:~/containerlabs/test2/clab-ceos-segmigration$ cd seg_w_fwl_nested/
+claudia@ubuntu:~/containerlabs/test2/clab-ceos-segmigration/seg_w_fwl_nested$ ls
+MOCK_FWL_LAB_README.md   cds-seg-fwl-nestedbr.clab-updated.drawio  na-us-0000-test-as01.cfg  na-us-0000-test-as03.cfg  na-us-0000-test-cs01.cfg  na-us-0000-test-fwl01.cfg  xArchive
+cds-seg-fwl-br.clab.yml  cds-seg-fwl-nestedbr.clab.drawio.png      na-us-0000-test-as02.cfg  na-us-0000-test-as04.cfg  na-us-0000-test-ds01.cfg  prework01.txt
+claudia@ubuntu:~/containerlabs/test2/clab-ceos-segmigration/seg_w_fwl_nested$ sudo clab deploy --reconfigure
+
+```
 
 
 
