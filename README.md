@@ -13,17 +13,134 @@ Learn some basic linux!!
 Installing
 Note: this is specific to the Linux distribution 
 Ubuntu/Debian
-- sudo apt update
-- sudo apt install xxxxx
-- sudo apt install -y iproute2 iputils-ping
 
-Command line Editor
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+2. Install Required Packages
+
+```bash
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+```
+
+```bash
+sudo apt install -y iproute2 iputils-ping
+```
+
+Add Docker's Official GPG Key and Repository
+
+Add Docker’s GPG key:
+
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+
+Uninstall all conflicting packages:
+
+```bash
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+```
+
+
+
+Add the Docker repository:
+
+```console
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+
+
+Install Docker Packages
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+```console
+ sudo systemctl status docker
+```
+
+Some systems may have this behavior disabled and will require a manual start:
+
+```console
+$ sudo systemctl start docke
+```
+
+Verify that the installation is successful by running the `hello-world` image:
+
+```console
+$ sudo docker run hello-world
+```
+
+
+
+### [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+
+https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+
+
+
+### Command line Editor
+
 - vi
 
 Learn & Practice!
 https://vimschool.netlify.app/introduction/vimtutor/
 
+## Installing Containerlab
+
+[Quick Setup](https://containerlab.dev/install)
+
+The easiest way to get started with containerlab is to use the [quick setup script](https://github.com/srl-labs/containerlab/blob/main/utils/quick-setup.sh) that installs all of the following components in one go (or allows to install them separately):
+
+- docker (docker-ce), docker compose
+- Containerlab (using the package repository)
+- [`gh`](https://cli.github.com/) CLI tool
+
+The script has been tested on the following OSes:
+
+- Ubuntu 20.04, 22.04, 23.10, 24.04
+
+To install all components at once, run the following command on any of the supported OSes:
+
+```console
+curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
+```
+
+### Loading docker images
+
+Download the latest or required cEOS image from arista.com (You will need a free Arista account using a buisness login email)
+
+Get the image to your Ubuntu server.
+
+```bash
+# rename the tag as you like
+docker import cEOS64-lab-4.28.xF.tar.xz ceos:4.28.xF
+docker images | egrep "REPOSITORY|ceos"
+
+```
+
+I recommend always setting the "latest" tag.
+
+```bash
+docker import cEOS64-lab-4.28.xF.tar.xz ceos:latest
+```
+
+
+
 ### Containerlab Topology for practicing Segmentation activities
+
 cds-seg.clab.yml
 
 This topology models a standard 3-tier core/distribution/access network and includes one "user device"
