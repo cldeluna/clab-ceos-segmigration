@@ -28,7 +28,7 @@ sudo apt install -y apt-transport-https ca-certificates curl software-properties
 sudo apt install -y iproute2 iputils-ping
 ```
 
-Add Docker's Official GPG Key and Repository
+#### Add Docker's Official GPG Key and Repository
 
 Add Docker’s GPG key:
 
@@ -47,15 +47,23 @@ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
 Add the Docker repository:
 
 ```console
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 # Add the repository to Apt sources:
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+
+
+```bash
 sudo apt-get update
 ```
 
@@ -74,13 +82,58 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 Some systems may have this behavior disabled and will require a manual start:
 
 ```console
-$ sudo systemctl start docke
+$ sudo systemctl start docker
 ```
+
+You may need to refresh your shell
+
+```bash
+source ~/.bashrc
+```
+
+
 
 Verify that the installation is successful by running the `hello-world` image:
 
 ```console
 $ sudo docker run hello-world
+```
+
+
+
+Expected output
+
+```bash
+claudia@vps-331cdbb4:~$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+17eec7bbc9d7: Pull complete 
+Digest: sha256:54e66cc1dd1fcb1c3c58bd8017914dbed8701e2d8c74d9262e26bd9cc1642d31
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+claudia@vps-331cdbb4:~$ 
+
 ```
 
 
@@ -118,11 +171,17 @@ To install all components at once, run the following command on any of the suppo
 curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
 ```
 
+
+
+https://containerlab.dev/quickstart/
+
+
+
 ### Loading docker images
 
 Download the latest or required cEOS image from arista.com (You will need a free Arista account using a buisness login email)
 
-Get the image to your Ubuntu server.
+Get the image (SCP/SFTP) to your Ubuntu server.
 
 ```bash
 # rename the tag as you like
@@ -136,6 +195,10 @@ I recommend always setting the "latest" tag.
 ```bash
 docker import cEOS64-lab-4.28.xF.tar.xz ceos:latest
 ```
+
+
+
+
 
 
 
@@ -561,3 +624,93 @@ From the desktop, try to ping the vlan 100 gateway, the cs loopback and the ds l
 From the core, trace to the desktop and share screen shot
 
 Some of the above will fail.   Why might that be?
+
+---
+
+```bash
+claudia@vps-331cdbb4:~/containerlab/josh-acel3$ history
+    1  sudo groups claudia
+    2  sudo apt update && sudo apt upgrade -y
+    3  sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+    4  sudo apt install -y iproute2 iputils-ping
+    5  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    6  for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    7  ls -al /etc/apt/keyrings/
+    8  whoami
+    9  sudo install -m 0755 -d /etc/apt/keyrings
+   10  ls -al /etc/apt/keyrings/
+   11  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] \
+   12    https://download.docker.com/linux/ubuntu jammy stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   13  sudo apt update
+   14  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   15  sudo systemctl status docker
+   16  sudo systemctl start docker
+   17  sudo groupadd docker
+   18  sudo usermod -aG docker $USER
+   19  groups claudia
+   20  docker run hello-world
+   21  sudo apt-get update
+   22  sudo apt-get install ca-certificates curl
+   23  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   24  sudo chmod a+r /etc/apt/keyrings/docker.asc
+   25  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+   26    $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   27  sudp
+   28  sudo apt-get update
+   29  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   30  sudo systemctl status docker
+   31  sudo systemctl restart docker
+   32  sudo systemctl status docker
+   33  docker run hello-world
+   34  exit
+   35  whoami
+   36  ls
+   37  cd containerlab/
+   38  ls
+   39  cd images/
+   40  ls
+   41  ls -al
+   42  docker import cEOS64-lab-4.32.1F.tar ceos:4.32.1F
+   43  docker images
+   44  sudo clab version
+   45  sudo containerlab version
+   46  curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
+   47  docker images
+   48  docker import cEOS64-lab-4.32.1F.tar ceos:latest
+   49  docker images
+   50  mkdir ~/clab-quickstart 
+   51  cd ~/clab-quickstart
+   52  curl -LO https://raw.githubusercontent.com/srl-labs/containerlab/main/lab-examples/srlceos01/srlceos01.clab.yml
+   53  cd ..
+   54  ls
+   55  mv clab-quickstart/ containerlab/
+   56  ls
+   57  cd containerlab/
+   58  ls
+   59  cd clab-quickstart/
+   60  ls
+   61  sudo clab deploy
+   62  ls
+   63  vi srlceos01.clab.yml 
+   64  sudo clab deploy
+   65  sudo clab destroy
+   66  ls
+   67  cd ..
+   68  mkdir josh-acel3
+   69  cd josh-acel3/
+   70  vi josh-acel2.clab.yml
+   71  sudo clab deploy
+   72  sudo clab destroy -h
+   73  sudo clab destroy -c
+   74  time -h
+   75  time sudo clab deploy
+   76  sudo clab destroy -c
+   77  free -h
+   78  time sudo clab deploy
+   79  free -h
+   80  top
+   81  sudo clab inspect
+   82  history
+
+```
+
